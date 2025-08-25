@@ -1,28 +1,7 @@
 ---
-title: "Hello World"
-description: "Welcome to my blog! This is my first post."
-date: 2024-03-21
-tags: ["welcome", "first-post"]
+title: "My First Post"
+date: 2025-08-26
+tags: ["ctf", "tutorial", "binary exploitation", "pwn", "reverse", "osint", "crypto", "exploit development"]
+description: "Example post with tags"
 ---
-
-Hello everyone! This is my first blog post. I'm excited to share my thoughts and experiences with you.
-
-## What to Expect
-
-In this blog, I'll be writing about:
-
-- Technology
-- Programming
-- Best practices
-- And much more!
-
-```javascript
-// Here's a simple example of code highlighting
-function greet(name) {
-  return `Hello, ${name}!`;
-}
-
-console.log(greet('World'));
-```
-
-Stay tuned for more content!
+Your content here…
