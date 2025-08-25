@@ -1,23 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogPreview from '../../components/BlogPreview.astro';
-import { siteConfig } from '@/siteConfig';
 import { getCollection } from 'astro:content';
-import { sortPostsByDate } from '../../utils/posts';
+import { getAllTags, getPostsByTag, sortPostsByDate } from '../../utils/posts';
 
 export async function getStaticPaths() {
-  // Only use your fixed tag list
-  return siteConfig.homepage.tags.map((tag) => ({
-    params: { tag },
-    props: { tag },
-  }));
+  const posts = await getCollection('blog');
+  const tags = getAllTags(posts);
+
+  return tags.map((tag) => {
+    const filteredPosts = getPostsByTag(posts, tag);
+    return {
+      params: { tag },
+      props: { posts: filteredPosts },
+    };
+  });
 }
 
 const { tag } = Astro.params;
-const posts = await getCollection('blog');
-
-// Right now: showing ALL posts for every tag
-// If you want to filter posts manually later, we can adjust here.
+const { posts } = Astro.props;
 const sortedPosts = sortPostsByDate(posts);
 ---
 
