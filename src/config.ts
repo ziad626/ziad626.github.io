@@ -19,8 +19,8 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   site: "https://ziad626.github.io", // your site url
   title: "Ziad686",
-  slogan: "CTF Player / Exploit Developer / Mont5ab El2hwa / Forsan / DraftOps / 403 Brain access denied ",
-  description: "",
+  slogan: "Ziad686",
+  description: "CTF Player / Exploit Developer / Mont5ab El2hwa / Forsan / DraftOps / 403 Brain access denied ",
   social: {
     github: "https://github.com/ziad626/ziad626.github.io", // leave empty if you don't want to show the github
     email: "zeyadsalah686@gmail.com", // leave empty if you don't want to show the email
