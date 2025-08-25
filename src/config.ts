@@ -22,12 +22,12 @@ export const siteConfig: SiteConfig = {
   slogan: "Exploit Code Not People",
   description: "CTF Player / Exploit Developer / Mont5ab El2hwa / Forsan / DraftOps / 403 Brain access denied ",
   social: {
-    github: "https://github.com/ziad626/ziad626.github.io", // leave empty if you don't want to show the github
+    github: "https://github.com/ziad626", // leave empty if you don't want to show the github
     email: "zeyadsalah686@gmail.com", // leave empty if you don't want to show the email
     rss: false, // set this to false if you don't want to provide an rss feed
   },
   homepage: {
-    maxPosts: 100,
+    maxPosts: 5,
     tags: ["ctf", "tutorial", "binary exploitation", "pwn", "reverse", "osint", "crypto", "exploit development"],
     excludeTags: [],
   },
