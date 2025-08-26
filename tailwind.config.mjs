@@ -39,7 +39,7 @@ export default {
             },
             code: {
               color: "rgb(31, 41, 55)",
-              backgroundColor: "rgb(31, 41, 55)",
+              backgroundColor: "rgb(229, 231, 235)", // Light gray background for code in light mode
               padding: "0.2em 0.4em",
               borderRadius: "0.25rem",
               fontWeight: "400",
@@ -60,7 +60,8 @@ export default {
             },
             code: {
               color: "rgb(243, 244, 246)",
-              backgroundColor: "rgb(31, 41, 55)",
+              // Updated this line from rgb(31, 41, 55) to #252525
+              backgroundColor: "#252525", 
             },
             blockquote: {
               color: "rgb(229, 231, 235)",
