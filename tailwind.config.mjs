@@ -7,6 +7,8 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Custom dark background color
+        'dark-background': '#252525',
         primary: {
           50: "#f2f8f3",
           100: "#e6f1e8",
@@ -60,7 +62,6 @@ export default {
             },
             code: {
               color: "rgb(243, 244, 246)",
-              // Updated this line from rgb(31, 41, 55) to #252525
               backgroundColor: "#252525", 
             },
             blockquote: {
