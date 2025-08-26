@@ -1,3 +1,10 @@
+---
+title: "BrunnerCTF 2025 trippa troppa sus reverse challenge"
+date: 2025-08-26
+tags: ["ctf", "tutorial", "reverse"]
+description: ""
+---
+
 hello hackers today i will share my writeup for the challenge trippa troppa sus from brunner ctf\
 this is a reverse engineering challenge with a python script that is written in a very obfuscated way using meme names and deep nested functions
 
