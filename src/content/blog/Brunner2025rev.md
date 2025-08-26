@@ -9,7 +9,7 @@ Hello hackers, today I will share my writeup for the challenge trippa troppa sus
 
 ### Understanding the Challenge
 
-The given python file is called `trippa_troppa_sus.py`.
+The given python file is called trippa_troppa_sus.py.
 
 ```python
 #!/usr/bin/env python3
@@ -93,24 +93,24 @@ if __name__ == "__main__":
 
 At first, it looks very confusing because it has more than ten levels of nested functions and many meme variable names, but if we ignore the noise and focus on what the code does, we can see the following main steps:
 
-1.  The program reads the file `flag.txt`.
-2.  It defines a key `skibidi`.
-3.  It builds a smaller key from `sha256` of the string `skibidiskibidi` and cuts it to the length of `skibidi`, which is 7 bytes.
-4.  It XORs the flag with this key using `itertools.cycle`.
-5.  It multiplies every byte of the result by `7 mod 256`.
+1.  The program reads the file flag.txt.
+2.  It defines a key skibidi.
+3.  It builds a smaller key from sha256 of the string skibidiskibidi and cuts it to the length of skibidi, which is 7 bytes.
+4.  It XORs the flag with this key using itertools.cycle.
+5.  It multiplies every byte of the result by 7 mod 256.
 6.  It reverses the order of the bytes.
 7.  It base85 encodes the final bytes and prints it.
 
-We are given the base85 output in a file called `output.txt`, so our job is to reverse all these steps in the opposite order.
+We are given the base85 output in a file called output.txt, so our job is to reverse all these steps in the opposite order.
 
 ### Building the Decoder
 
 To solve this, we do the following steps:
 
-1.  Base85 decode the string from `output.txt`.
+1.  Base85 decode the string from output.txt.
 2.  Reverse the bytes back to the original order.
-3.  Undo the multiplication by 7. This is done using the modular inverse of 7 modulo 256. The inverse is 183 because (7 * 183) is congruent to 1 mod 256. So we multiply every byte by `183 mod 256`.
-4.  XOR the result again with the same `sha256` key to undo the previous XOR step.
+3.  Undo the multiplication by 7. This is done using the modular inverse of 7 modulo 256. The inverse is 183 because (7 * 183) is congruent to 1 mod 256. So we multiply every byte by 183 mod 256.
+4.  XOR the result again with the same sha256 key to undo the previous XOR step.
 5.  What we get after this should be the flag in plain ASCII.
 
 ### The Decoder Code
@@ -145,13 +145,13 @@ print(flag.decode())
 
 ### Explanation of the Code
 
-We import `base64`, `hashlib`, and `itertools` because we need them for base85 decoding, for `sha256`, and for cycling the XOR key.
+We import base64, hashlib, and itertools because we need them for base85 decoding, for sha256, and for cycling the XOR key.
 
--   `data = base64.b85decode(data)` undoes the base85 encoding from the original script.
--   `rev = decoded[::-1]` undoes the reverse step.
--   `inv7 = 183` this number is important. It is the modular inverse of 7 modulo 256. It allows us to undo the multiplication that the original script applied.
--   `key = hashlib.sha256(b"skibidiskibidi").digest()[:7]` builds the same key used in the encoder. Because the word `skibidi` is 7 bytes, we cut the digest to 7 bytes.
--   `flag = bytes(c ^ k for c, k in zip(step3, itertools.cycle(key)))` XORs the bytes with the key again, which cancels out the first XOR.
+-   data = base64.b85decode(data) undoes the base85 encoding from the original script.
+-   rev = decoded[::-1] undoes the reverse step.
+-   inv7 = 183 this number is important. It is the modular inverse of 7 modulo 256. It allows us to undo the multiplication that the original script applied.
+-   key = hashlib.sha256(b"skibidiskibidi").digest()[:7] builds the same key used in the encoder. Because the word skibidi is 7 bytes, we cut the digest to 7 bytes.
+-   flag = bytes(c ^ k for c, k in zip(step3, itertools.cycle(key))) XORs the bytes with the key again, which cancels out the first XOR.
 
 The final print gives the clear flag.
 
