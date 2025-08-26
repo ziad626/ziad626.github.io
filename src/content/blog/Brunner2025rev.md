@@ -5,7 +5,7 @@ understanding the challenge
 ===========================
 
 the given python file is called `trippa_troppa_sus.py`
-
+```
 #!/usr/bin/env python3\
 import sys as _tralalero_tralala_impostor_____\
 (lambda _bombardiro_crocodilo___: [\
@@ -85,7 +85,7 @@ if __name__ == "__main__":\
     print((lambda ___x_tralalero___: ___x_tralalero___()()()()()()()()()()()())(___ranocchio_turbina_function_factory____))\
 at first it looks very confusing because it has more than ten levels of nested functions and many meme variable names\
  but if we ignore the noise and focus on what the code does we can see the following main steps
-
+```
 1 the program reads the file `flag.txt`\
 2 it defines a key `skibidi`\
 3 it builds a smaller key from sha256 of the string `skibidiskibidi` and cuts it to the length of `skibidi` which is 7 bytes\
